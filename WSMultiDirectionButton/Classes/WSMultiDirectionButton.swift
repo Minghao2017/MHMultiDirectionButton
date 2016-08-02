@@ -8,16 +8,16 @@
 
 import UIKit
 
-enum WSMultiDirectionButtonDirection: Int {
+public enum WSMultiDirectionButtonDirection: Int {
     case LeftToRight = 0
     case RightToLeft
     case Vertical
 }
 
 /// 支持多个方向的UIButton子类。
-@IBDesignable class WSMultiDirectionButton: UIButton {
+@IBDesignable public class WSMultiDirectionButton: UIButton {
 
-    @IBInspectable var direction: Int = 0 {
+    @IBInspectable public var direction: Int = 0 {
         willSet {
             let d = WSMultiDirectionButtonDirection(rawValue: newValue)
             if d != nil {
@@ -28,14 +28,14 @@ enum WSMultiDirectionButtonDirection: Int {
         }
     }
     
-    @IBInspectable var imageLabelSpacing: CGFloat = 8 {
+    @IBInspectable public var imageLabelSpacing: CGFloat = 8 {
         didSet {
             setNeedsLayout()
             layoutIfNeeded()
         }
     }
     
-    var directionEnum: WSMultiDirectionButtonDirection = .LeftToRight {
+    private var directionEnum: WSMultiDirectionButtonDirection = .LeftToRight {
         didSet {
             setNeedsLayout()
             layoutIfNeeded()
@@ -45,7 +45,7 @@ enum WSMultiDirectionButtonDirection: Int {
     /**
      重写Layout过程
      */
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         switch directionEnum {
@@ -102,7 +102,7 @@ enum WSMultiDirectionButtonDirection: Int {
         }
     }
     
-    override func sizeThatFits(size: CGSize) -> CGSize {
+    override public func sizeThatFits(size: CGSize) -> CGSize {
         var lblSize = CGSizeZero
         if titleLabel != nil {
             lblSize = titleLabel!.sizeThatFits(size)
@@ -126,7 +126,7 @@ enum WSMultiDirectionButtonDirection: Int {
      
      - returns: 内容大小
      */
-    override func intrinsicContentSize() -> CGSize {
+    override public func intrinsicContentSize() -> CGSize {
         let baseSize = CGSizeMake(1000, 1000) //一个超大的baseSize，保证sizeThatFits返回正确的尺寸
         return sizeThatFits(baseSize)
     }
