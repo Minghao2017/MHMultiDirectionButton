@@ -1,0 +1,14 @@
+PODS:
+  - WSMultiDirectionButton (0.1.0)
+
+DEPENDENCIES:
+  - WSMultiDirectionButton (from `../`)
+
+EXTERNAL SOURCES:
+  WSMultiDirectionButton:
+    :path: ../
+
+SPEC CHECKSUMS:
+  WSMultiDirectionButton: f3af33f4045ae8f9b15508b508b61e5aadc7dc77
+
+COCOAPODS: 0.39.0

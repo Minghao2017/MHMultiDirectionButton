@@ -1,0 +1,6 @@
+framework module WSMultiDirectionButton {
+  umbrella header "WSMultiDirectionButton-umbrella.h"
+
+  export *
+  module * { export * }
+}
